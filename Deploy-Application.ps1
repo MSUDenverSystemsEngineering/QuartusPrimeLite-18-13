@@ -143,12 +143,12 @@ Try {
 		}
 
 		## <Perform Installation tasks here>
-     	Execute-Process -Path "$dirFiles\Quartus-web-13.0.1.232-windows\components\QuartusSetupWeb-13.0.1.232.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir C:\Quartus\13.0sp1\' -WindowStyle 'Hidden' -PassThru
-			Execute-Process -Path "$dirFiles\Quartus-web-13.0.1.232-windows\components\ModelSimSetup-13.0.1.232.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir "C:\Quartus\18.0" --modelsim_edition modelsim_ase --product_copy_name "none" --launch_from_quartus 1' -WindowStyle 'Hidden' -PassThru
-			Execute-Process -Path "$dirFiles\Quartus-web-13.0.1.232-windows\components\QuartusHelpSetup-13.0.1.232.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir C:\Quartus\13.0sp1\ ' -WindowStyle 'Hidden' -PassThru
-			Execute-Process -Path "$dirFiles\Quartus-lite-18.0.0.614-windows\components\QuartusLiteSetup-18.0.0.614-windows.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir C:\Quartus\18.0\ --accept_eula 1' -WindowStyle 'Hidden' -PassThru
-      Execute-Process -Path "$dirFiles\Quartus-lite-18.0.0.614-windows\components\ModelSimSetup-18.0.0.614-windows.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir "C:\Quartus\18.0" --modelsim_edition modelsim_ase --product_copy_name "none" --launch_from_quartus 1 --accept_eula 1' -WindowStyle 'Hidden' -PassThru
-			Execute-Process -Path "$dirFiles\Quartus-lite-18.0.0.614-windows\components\QuartusHelpSetup-18.0.0.614-windows.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir C:\Quartus\18.0\ --accept_eula 1' -WindowStyle 'Hidden' -PassThru
+     	Execute-Process -Path "$dirFiles\Quartus-web-13.0.1.232-windows\QuartusLite\QuartusSetupWeb-13.0.1.232.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir C:\Quartus\13.0sp1\' -WindowStyle 'Hidden' -PassThru
+			Execute-Process -Path "$dirFiles\Quartus-web-13.0.1.232-windows\ModelSim\ModelSimSetup-13.0.1.232.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir "C:\Quartus\18.0" --modelsim_edition modelsim_ase --product_copy_name "none" --launch_from_quartus 1' -WindowStyle 'Hidden' -PassThru
+			Execute-Process -Path "$dirFiles\Quartus-web-13.0.1.232-windows\QuartusHelp\QuartusHelpSetup-13.0.1.232.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir C:\Quartus\13.0sp1\ ' -WindowStyle 'Hidden' -PassThru
+			Execute-Process -Path "$dirFiles\Quartus-lite-18.0.0.614-windows\QuartusLite\QuartusLiteSetup-18.0.0.614-windows.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir C:\Quartus\18.0\ --accept_eula 1' -WindowStyle 'Hidden' -PassThru
+      Execute-Process -Path "$dirFiles\Quartus-lite-18.0.0.614-windows\ModelSim\ModelSimSetup-18.0.0.614-windows.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir "C:\Quartus\18.0" --modelsim_edition modelsim_ase --product_copy_name "none" --launch_from_quartus 1 --accept_eula 1' -WindowStyle 'Hidden' -PassThru
+			Execute-Process -Path "$dirFiles\Quartus-lite-18.0.0.614-windows\QuartusHelp\QuartusHelpSetup-18.0.0.614-windows.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir C:\Quartus\18.0\ --accept_eula 1' -WindowStyle 'Hidden' -PassThru
 
 		##*===============================================
 		##* POST-INSTALLATION
@@ -204,7 +204,7 @@ Try {
 		[string]$installPhase = 'Post-Uninstallation'
 
 		## <Perform Post-Uninstallation tasks here>
-		Remove-Folder -Path "C:\intelFPGA_lite" -ContinueOnError
+		Remove-Folder -Path "C:\Quartus" -ContinueOnError
 
 	}
 
