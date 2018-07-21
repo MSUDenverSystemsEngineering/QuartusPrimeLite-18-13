@@ -190,8 +190,7 @@ Try {
 		}
 
 		# <Perform Uninstallation tasks here>
-		
-				# Help and Modelsim should be taken care of by the main uninstaller. Leaving here in case needed.DESCRIPTION
+				# Help and Modelsim should be taken care of by the main uninstaller. Leaving here in case needed.
 
         #Execute-Process -Path "C:\quartus\13.0sp1\uninstall\modelsim_ase-13.0.1.232-uninstall.exe" -Parameters '--mode unattended --unattendedmodeui none' -WindowStyle 'Hidden' -PassThru
         Execute-Process -Path "C:\quartus\13.0sp1\uninstall\quartus_web-13.0.1.232-uninstall.exe" -Parameters '--mode unattended --unattendedmodeui none' -WindowStyle 'Hidden' -PassThru
