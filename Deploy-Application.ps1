@@ -144,7 +144,7 @@ Try {
 
 		## <Perform Installation tasks here>
      	Execute-Process -Path "$dirFiles\Quartus-web-13.0.1.232-windows\QuartusLite\QuartusSetupWeb-13.0.1.232.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir C:\Quartus\13.0sp1\' -WindowStyle 'Hidden' -PassThru
-			Execute-Process -Path "$dirFiles\Quartus-web-13.0.1.232-windows\ModelSim\ModelSimSetup-13.0.1.232.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir "C:\Quartus\18.0" --modelsim_edition modelsim_ase --product_copy_name "none" --launch_from_quartus 1' -WindowStyle 'Hidden' -PassThru
+			Execute-Process -Path "$dirFiles\Quartus-web-13.0.1.232-windows\ModelSim\ModelSimSetup-13.0.1.232.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir "C:\Quartus\13.0sp1" --modelsim_edition modelsim_ase --product_copy_name "none" --launch_from_quartus 1' -WindowStyle 'Hidden' -PassThru
 			Execute-Process -Path "$dirFiles\Quartus-web-13.0.1.232-windows\QuartusHelp\QuartusHelpSetup-13.0.1.232.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir C:\Quartus\13.0sp1\ ' -WindowStyle 'Hidden' -PassThru
 			Execute-Process -Path "$dirFiles\Quartus-lite-18.0.0.614-windows\QuartusLite\QuartusLiteSetup-18.0.0.614-windows.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir C:\Quartus\18.0\ --accept_eula 1' -WindowStyle 'Hidden' -PassThru
       Execute-Process -Path "$dirFiles\Quartus-lite-18.0.0.614-windows\ModelSim\ModelSimSetup-18.0.0.614-windows.exe" -Parameters '--mode unattended --unattendedmodeui none --installdir "C:\Quartus\18.0" --modelsim_edition modelsim_ase --product_copy_name "none" --launch_from_quartus 1 --accept_eula 1' -WindowStyle 'Hidden' -PassThru
@@ -190,12 +190,15 @@ Try {
 		}
 
 		# <Perform Uninstallation tasks here>
-        Execute-Process -Path "C:\quartus\13.0sp1\uninstall\modelsim_ase-13.0.1.232-uninstall.exe" -Parameters '--mode unattended --unattendedmodeui none' -WindowStyle 'Hidden' -PassThru
+		
+				# Help and Modelsim should be taken care of by the main uninstaller. Leaving here in case needed.DESCRIPTION
+
+        #Execute-Process -Path "C:\quartus\13.0sp1\uninstall\modelsim_ase-13.0.1.232-uninstall.exe" -Parameters '--mode unattended --unattendedmodeui none' -WindowStyle 'Hidden' -PassThru
         Execute-Process -Path "C:\quartus\13.0sp1\uninstall\quartus_web-13.0.1.232-uninstall.exe" -Parameters '--mode unattended --unattendedmodeui none' -WindowStyle 'Hidden' -PassThru
-				Execute-Process -Path "C:\quartus\13.0sp1\uninstall\quartus_help-13.0.1.232-uninstall.exe" -Parameters '--mode unattended --unattendedmodeui none' -WindowStyle 'Hidden' -PassThru
-				Execute-Process -Path "C:\quartus\18.0\uninstall\modelsim_ase-18.0.0.614-uninstall.exe" -Parameters '--mode unattended --unattendedmodeui none' -WindowStyle 'Hidden' -PassThru
-        Execute-Process -Path "C:\quartus\18.0\uninstall\quartus_lite-18.0.0.614-uninstall.exe" -Parameters '--mode unattended --unattendedmodeui none' -WindowStyle 'Hidden' -PassThru
-				Execute-Process -Path "C:\quartus\18.0\uninstall\quartus_help-18.0.0.614-uninstall.exe" -Parameters '--mode unattended --unattendedmodeui none' -WindowStyle 'Hidden' -PassThru
+				# Execute-Process -Path "C:\quartus\13.0sp1\uninstall\quartus_help-13.0.1.232-uninstall.exe" -Parameters '--mode unattended --unattendedmodeui none' -WindowStyle 'Hidden' -PassThru
+				# Execute-Process -Path "C:\quartus\18.0\uninstall\modelsim_ase-18.0.0.614-windows-uninstall.exe" -Parameters '--mode unattended --unattendedmodeui none' -WindowStyle 'Hidden' -PassThru
+        Execute-Process -Path "C:\quartus\18.0\uninstall\quartus_lite-18.0.0.614-windows-uninstall.exe" -Parameters '--mode unattended --unattendedmodeui none' -WindowStyle 'Hidden' -PassThru
+				# Execute-Process -Path "C:\quartus\18.0\uninstall\quartus_help-18.0.0.614-windows-uninstall.exe" -Parameters '--mode unattended --unattendedmodeui none' -WindowStyle 'Hidden' -PassThru
 
 
 		##*===============================================
@@ -204,7 +207,7 @@ Try {
 		[string]$installPhase = 'Post-Uninstallation'
 
 		## <Perform Post-Uninstallation tasks here>
-		Remove-Folder -Path "C:\Quartus" -ContinueOnError
+		Remove-Folder -Path "C:\Quartus"
 
 	}
 
